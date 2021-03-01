@@ -487,3 +487,13 @@ app.use(compression())
 
 ![data](https://gitee.com/wBekvam/vue-shop-admin/raw/master/image/data.png)
 
+## 错误异常
+在使用Node.js14+版本可能出现错误
+
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: No "exports" main resolved in /home/vue/vueShop/vue-shop-admin/node_modules/@babel/helper-compilation-targets/package.json
+    at applyExports (internal/modules/cjs/loader.js:498:9)
+    at resolveExports (internal/modules/cjs/loader.js:514:23)
+    ...
+
+解决： `npm install @babel/helper-compilation-targets --save-dev`
