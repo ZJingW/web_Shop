@@ -18,7 +18,7 @@ import VueRouter from 'vue-router'
 // import Order from '../components/order/Order.vue'
 // import Report from '../components/report/Report.vue'
 
-// 路由懒加载
+// 路由懒加载  打包到同一个js文件中比如Login_Home-Welcome
 const Login = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/Login.vue')
 const Home = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/Home.vue')
 const Welcome = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/Welcome.vue')
@@ -71,6 +71,7 @@ router.beforeEach((to, from, next) => {
   const tokenStr = window.sessionStorage.getItem('token')
   // 没有token, 强制跳转到登录页
   if (!tokenStr) return next('/login')
+  // 上面的代码执行了就走了，如果没执行就代表有token了
   next()
 })
 

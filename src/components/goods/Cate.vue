@@ -32,6 +32,11 @@
             style="color: lightgreen"
             v-if="scope.row.cat_deleted === false"
           ></i>
+              <i
+            class="el-icon-error"
+            style="color: lightgreen"
+            v-else
+          ></i>
         </template>
         <!-- 排序 -->
         <template slot="order" slot-scope="scope">
@@ -75,6 +80,7 @@
             :options="parentCateList"
             :props="cascaderProps"
             @change="parentCateChanged"
+            change-on-select
             clearable
             filterable
             style="width: 100%"

@@ -22,13 +22,13 @@
       <el-table :data="goodsList" border stripe>
         <el-table-column type="index"></el-table-column>
         <el-table-column label="商品名称" prop="goods_name"></el-table-column>
-        <el-table-column label="商品价格(元)" prop="goods_price" width="100px"></el-table-column>
+        <el-table-column label="商品价格(元)" prop="goods_price" width="70px"></el-table-column>
         <el-table-column label="商品重量" prop="goods_weight" width="70px"></el-table-column>
         <el-table-column label="商品数量" prop="goods_number" width="70px"></el-table-column>
-        <el-table-column label="创建时间" prop="add_time" width="140px">
+        <el-table-column label="创建时间" prop="add_time" width="200px">
           <template slot-scope="scope">{{scope.row.add_time | dataFormat }}</template>
         </el-table-column>
-        <el-table-column label="操作" width="130px">
+        <el-table-column label="操作" width="200px">
           <template slot-scope="scope">
             <el-button type="primary" icon="el-icon-edit" size="mini"></el-button>
             <el-button

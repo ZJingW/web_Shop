@@ -91,7 +91,7 @@ export default {
 // scoped vue的指令，只在当前组件生效 */
 .login_container {
   background-color: #2b4b6b;
-  height: 100%;
+  height: 100%;//全屏
 }
 .login_box {
   width: 450px;
@@ -101,8 +101,7 @@ export default {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  background-color: #fff;
+  transform: translate(-50%, -50%);
 
   .avatar_box {
     width: 130px;
@@ -128,7 +127,7 @@ export default {
   bottom: 60px;
   width: 100%;
   padding: 0 20px;
-  box-sizing: border-box;
+  box-sizing: border-box;//width为content+padding+borer content为内容区域 width为内容宽度
 }
 .btns {
   display: flex;

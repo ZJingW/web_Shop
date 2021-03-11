@@ -75,7 +75,7 @@
         :page-sizes="[2, 5, 10, 15]"
         :page-size="queryInfo.pagesize"
         layout="total, sizes, prev, pager, next, jumper"
-        :total="totle"
+        :total="total"
       ></el-pagination>
     </el-card>
 
@@ -199,7 +199,7 @@ export default {
         pagesize: 5
       },
       userlist: [],
-      totle: 0,
+      total: 0,
       // 添加用户对话框
       addDialogVisible: false,
       // 用户添加
@@ -274,7 +274,7 @@ export default {
         return this.$message.error('获取用户列表失败！')
       }
       this.userlist = res.data.users
-      this.totle = res.data.totle
+      this.total = res.data.total
     },
     // 监听 pagesize改变的事件
     handleSizeChange (newSize) {
@@ -295,6 +295,7 @@ export default {
         `users/${userInfo.id}/state/${userInfo.mg_state}`
       )
       if (res.meta.status !== 200) {
+        // 保障用户状态修改失败
         userInfo.mg_state = !userInfo.mg_state
         return this.$message.error('更新用户状态失败')
       }

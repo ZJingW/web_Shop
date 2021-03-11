@@ -88,6 +88,7 @@ export default {
     // 保存连接的激活地址
     saveNavState (activePath) {
       window.sessionStorage.setItem('activePath', activePath)
+      this.activePath = activePath
     }
   }
 }
@@ -97,6 +98,7 @@ export default {
 .el-container {
   height: 100%;
 }
+// 每个elementUi提供的组件，对应的类名就是组件名称
 .el-header {
   background-color: #373f41;
   display: flex;

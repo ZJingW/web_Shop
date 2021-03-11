@@ -1,4 +1,4 @@
-// 项目开发阶段用到的babel插件
+// 项目开发阶段用到的babel插件 怕transform-remove-console影响调试阶段
 const prodPlugins = []
 if (process.env.NODE_ENV === 'production') {
   prodPlugins.push('transform-remove-console')

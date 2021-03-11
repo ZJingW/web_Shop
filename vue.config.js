@@ -1,6 +1,6 @@
 module.exports = {
-  chainWebpack: config => {
-    // 发布模式
+  chainWebpack: config => { //链式打包方式
+    // 发布模式 修改打包入口
     config.when(process.env.NODE_ENV === 'production', config => {
       config
         .entry('app')
